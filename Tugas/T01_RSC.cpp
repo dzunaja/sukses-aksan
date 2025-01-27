@@ -91,22 +91,19 @@ int main (){
     PhoneBook pb; 
     while (true) {   
         cout<<"---PhoneBook Pak Bell---"<<endl;
-        int pilihan;
+        string pilihan;
         cout<<"1. Add"<<endl;
         cout<<"2. Search"<<endl;
         cout<<"3. Exit"<<endl;
-        cout<<"Masukkan pilihan (1/2/3)= ";
+        cout<<"Masukkan pilihan (Add/Search/Exit)= ";
         cin>>pilihan;
-        if (pilihan==3){
+        cout<<""<<endl;
+        
+        if (pilihan=="Exit"){
             cout<<"PhoneBook Pak Bell ditutup";
             break;
             }
-        else if (pilihan==1){
-            pb.inputcontact();
-            cout<<"Contact berhasil ditambahkan!!"<<endl;
-            cout<<""<<endl;
-            }
-        else if (pilihan==2){            
+        else if (pilihan=="Search"){            
             pb.show();
             cout<<"Masukkan nama kontak yang ingin dicari: ";
             string orang;
@@ -114,12 +111,14 @@ int main (){
             cout<<""<<endl;
             pb.Search(orang);
             }
-        else{
+        else if (pilihan=="Add"){
+            pb.inputcontact();
+            cout<<"Contact berhasil ditambahkan!!"<<endl;
             cout<<""<<endl;
+            }
+        else{
             cout<<"Silakan masukkan input yang valid"<<endl;
             }
-            
-        }
-   return 0;
-    
+    }
+   return 0; 
 }
