@@ -31,7 +31,7 @@ class PhoneBook{
 
     public:
     void Add(string nama, string alamat, string domisili, string kekuatan){
-        if (ListContact.size()>=1)
+        if (ListContact.size()>=8)
         {
             ListContact.erase(ListContact.begin());
         }
