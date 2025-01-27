@@ -16,7 +16,7 @@ public:
         tempat_tinggal = xdomisili;
         kekuatan = xkekuatan;
     }
-    void printdata(){
+    void printdata(){//output detail contact
         cout<<"Nama        \t= " << nama << endl;
         cout<<"Alamat     \t= "<<alamat<<endl;
         cout<<"Tempat tinggal\t= "<<tempat_tinggal<<endl;
@@ -33,9 +33,9 @@ class PhoneBook{
     void Add(string nama, string alamat, string domisili, string kekuatan){
         if (ListContact.size()>=8)
         {
-            ListContact.erase(ListContact.begin());
+            ListContact.erase(ListContact.begin());//menghapus contact paling atas atau paling pertama ditambahkan
         }
-        ListContact.push_back(Contact(nama, alamat, domisili, kekuatan ));
+        ListContact.push_back(Contact(nama, alamat, domisili, kekuatan ));//menambah contact ke dalam vector
         }
 
     void inputcontact(){
@@ -58,12 +58,12 @@ class PhoneBook{
         for(auto& Contact: ListContact){
             if (Contact.nama==nama)
             {
-                Contact.printdata();
+                Contact.printdata();//output jika contact tersedia
                 ada=true;
             }
         if (!ada)
         {
-            cout<<"Contact "<<nama<<" tidak ada, silakan tambahkan kontak baru"<<endl;
+            cout<<"Contact "<<nama<<" tidak ada, silakan tambahkan kontak baru"<<endl;//output jika contact tidak tersedia
             cout<<""<<endl;
         }
             
@@ -71,7 +71,7 @@ class PhoneBook{
         }
     }
     void show() {
-        if (ListContact.empty()) {
+        if (ListContact.empty()) {//jika phonebook kosong
             cout<<"PhoneBook kosong, silakan Add terlebih dahulu"<<endl;
             return ;
         }
@@ -87,7 +87,7 @@ class PhoneBook{
     }
 };
  
-int main (){
+int main (){ //main program
     PhoneBook pb; 
     while (true) {   
         cout<<"---PhoneBook Pak Bell---"<<endl;
@@ -107,7 +107,7 @@ int main (){
             pb.show();
             cout<<"Masukkan nama kontak yang ingin dicari: ";
             string orang;
-            getline(cin>>ws, orang);
+            getline(cin>>ws, orang);//input kontak yang ingin dicari
             cout<<""<<endl;
             pb.Search(orang);
             }
@@ -117,7 +117,7 @@ int main (){
             cout<<""<<endl;
             }
         else{
-            cout<<"Silakan masukkan input yang valid"<<endl;
+            cout<<"Silakan masukkan input yang valid"<<endl;//jika input salah
             }
     }
    return 0; 
